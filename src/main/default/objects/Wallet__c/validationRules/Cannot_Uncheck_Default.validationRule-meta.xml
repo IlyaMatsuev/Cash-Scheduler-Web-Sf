@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Uncheck_Default</fullName>
+    <active>true</active>
+    <errorConditionFormula>PRIORVALUE(IsDefault__c) = TRUE &amp;&amp; ISCHANGED(IsDefault__c)</errorConditionFormula>
+    <errorDisplayField>IsDefault__c</errorDisplayField>
+    <errorMessage>You have to choose a new default wallet rather than unchecking it</errorMessage>
+</ValidationRule>

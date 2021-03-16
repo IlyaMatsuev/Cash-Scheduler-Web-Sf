@@ -29,10 +29,9 @@ echo
 echo "Deploying to $scratch_alias..."
 sfdx force:source:push -u "$scratch_alias"
 
-# Will be needed in prospect
-#echo
-#echo "Assigning permissions..."
-#sfdx force:user:permset:assign -n Available_Products_Component -u "$scratch_alias"
+echo
+echo "Assigning permissions..."
+sfdx force:user:permset:assign -n CashSchedulerAdmin -u "$scratch_alias"
 
 # Will be needed in prospect
 #echo
