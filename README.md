@@ -48,7 +48,7 @@ All steps are the same as for scratch org installation but instead of calling:
 You should use:
 
 ```bash
-./scripts/sh/init-dev.sh
+./scripts/sh/init-dev.sh {ORG_ALIAS}
 ```
 
 All other steps are identical

@@ -33,10 +33,13 @@ echo
 echo "Assigning permissions..."
 sfdx force:user:permset:assign -n CashSchedulerAdmin -u "$scratch_alias"
 
-# Will be needed in prospect
-#echo
-#echo "Loading data..."
-#sfdx force:data:tree:import -p data/data-loading-plan.json -u "$scratch_alias"
+echo
+echo "Generating password..."
+sfdx force:user:password:generate -u "$scratch_alias" -v "$dev_hub_alias"
+
+echo
+echo "Loading data..."
+sfdx force:data:tree:import -p ./data/Account-Contact-plan.json -u "$scratch_alias"
 
 echo
 sfdx force:org:open -u "$scratch_alias"

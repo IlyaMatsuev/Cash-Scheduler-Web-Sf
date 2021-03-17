@@ -12,6 +12,7 @@
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
     <label>Cash Scheduler</label>
     <navType>Standard</navType>
+    <tabs>standard-Account</tabs>
     <tabs>standard-Contact</tabs>
     <tabs>Wallet__c</tabs>
     <tabs>Category__c</tabs>

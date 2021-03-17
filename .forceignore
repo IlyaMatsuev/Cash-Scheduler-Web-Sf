@@ -9,4 +9,5 @@ package.xml
 
 # Unnecessary components
 src/main/default/profiles
+src/main/default/appMenus
 AppBrand.app
