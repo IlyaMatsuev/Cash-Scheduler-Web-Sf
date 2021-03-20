@@ -18,6 +18,7 @@ sfdx force:source:deploy -u "$org_alias" -p ./src
 echo
 echo "Assigning permissions..."
 sfdx force:user:permset:assign -n CashSchedulerAdmin -u "$org_alias"
+sfdx force:user:permset:assign -n TriggerFrameworkUser -u "$org_alias"
 
 echo
 echo "Loading data..."

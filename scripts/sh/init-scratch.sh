@@ -32,6 +32,7 @@ sfdx force:source:push -u "$scratch_alias"
 echo
 echo "Assigning permissions..."
 sfdx force:user:permset:assign -n CashSchedulerAdmin -u "$scratch_alias"
+sfdx force:user:permset:assign -n TriggerFrameworkUser -u "$scratch_alias"
 
 echo
 echo "Generating password..."
