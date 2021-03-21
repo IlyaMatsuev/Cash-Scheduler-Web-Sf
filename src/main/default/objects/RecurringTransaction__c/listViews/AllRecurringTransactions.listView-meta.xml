@@ -10,10 +10,5 @@
     <columns>Wallet__c</columns>
     <columns>User__c</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>RECORDTYPE</field>
-        <operation>equals</operation>
-        <value>Transaction__c.RecurringTransaction</value>
-    </filters>
     <label>All Recurring Transactions</label>
 </ListView>

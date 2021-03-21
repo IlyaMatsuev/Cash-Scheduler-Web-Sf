@@ -40,7 +40,7 @@ sfdx force:user:password:generate -u "$scratch_alias" -v "$dev_hub_alias"
 
 echo
 echo "Loading data..."
-sfdx force:data:tree:import -p ./data/Account-Contact-plan.json -u "$scratch_alias"
+sfdx force:data:tree:import -p ./data/Account-plan.json -u "$scratch_alias"
 
 echo
 sfdx force:org:open -u "$scratch_alias"

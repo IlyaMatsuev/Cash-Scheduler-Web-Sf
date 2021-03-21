@@ -6,13 +6,5 @@
         "files": [
             "Accounts.json"
         ]
-    },
-    {
-        "sobject": "Contact",
-        "saveRefs": false,
-        "resolveRefs": true,
-        "files": [
-            "Contacts.json"
-        ]
     }
 ]

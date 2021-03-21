@@ -9,10 +9,5 @@
     <columns>Wallet__c</columns>
     <columns>User__c</columns>
     <filterScope>Everything</filterScope>
-    <filters>
-        <field>RECORDTYPE</field>
-        <operation>equals</operation>
-        <value>Transaction__c.Transaction</value>
-    </filters>
     <label>All Transactions</label>
 </ListView>

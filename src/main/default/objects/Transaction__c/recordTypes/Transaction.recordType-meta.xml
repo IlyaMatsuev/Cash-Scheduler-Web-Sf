@@ -3,23 +3,4 @@
     <fullName>Transaction</fullName>
     <active>true</active>
     <label>Transaction</label>
-    <picklistValues>
-        <picklist>Interval__c</picklist>
-        <values>
-            <fullName>Day</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Month</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Week</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Year</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
 </RecordType>

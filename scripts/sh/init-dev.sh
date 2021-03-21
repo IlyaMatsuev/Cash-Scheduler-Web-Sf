@@ -22,7 +22,7 @@ sfdx force:user:permset:assign -n TriggerFrameworkUser -u "$org_alias"
 
 echo
 echo "Loading data..."
-sfdx force:data:tree:import -p ./data/Account-Contact-plan.json -u "$org_alias"
+sfdx force:data:tree:import -p ./data/Account-plan.json -u "$org_alias"
 
 echo
 echo "Deployment completed"
