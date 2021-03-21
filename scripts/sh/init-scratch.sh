@@ -27,6 +27,8 @@ sfdx force:org:create -f ./config/scratch-def.json -a "$scratch_alias" -v "$dev_
 
 echo
 echo "Deploying to $scratch_alias..."
+sfdx force:source:deploy -u "$scratch_alias" -p ./src/main/trigger-framework/labels
+sfdx force:source:deploy -u "$scratch_alias" -p ./src/main/default/labels
 sfdx force:source:push -u "$scratch_alias"
 
 echo

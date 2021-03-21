@@ -17,6 +17,7 @@
     <tabs>Wallet__c</tabs>
     <tabs>Category__c</tabs>
     <tabs>Transaction__c</tabs>
+    <tabs>RecurringTransaction__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Cash_Scheduler_UtilityBar</utilityBar>
 </CustomApplication>

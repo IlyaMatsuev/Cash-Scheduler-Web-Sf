@@ -13,6 +13,8 @@ sfdx force:auth:web:login -a "$org_alias"
 
 echo
 echo "Deploying to $org_alias..."
+sfdx force:source:deploy -u "$org_alias" -p ./src/main/trigger-framework/labels
+sfdx force:source:deploy -u "$org_alias" -p ./src/main/default/labels
 sfdx force:source:deploy -u "$org_alias" -p ./src
 
 echo

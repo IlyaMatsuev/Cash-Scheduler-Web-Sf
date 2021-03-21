@@ -137,11 +137,6 @@
         </columns>
         <columns>
             <checkedByDefault>false</checkedByDefault>
-            <field>Interval__c</field>
-            <table>Contact.Wallets__r.Transactions__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
             <field>LastModifiedBy</field>
             <table>Contact.Wallets__r.Transactions__r</table>
         </columns>
@@ -153,11 +148,6 @@
         <columns>
             <checkedByDefault>true</checkedByDefault>
             <field>Name</field>
-            <table>Contact.Wallets__r.Transactions__r</table>
-        </columns>
-        <columns>
-            <checkedByDefault>false</checkedByDefault>
-            <field>NextTransactionDate__c</field>
             <table>Contact.Wallets__r.Transactions__r</table>
         </columns>
         <columns>
