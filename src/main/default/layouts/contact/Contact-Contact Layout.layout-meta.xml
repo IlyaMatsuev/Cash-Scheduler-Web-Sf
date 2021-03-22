@@ -9,7 +9,6 @@
     <excludeButtons>Delete</excludeButtons>
     <excludeButtons>IsotopeSubscription</excludeButtons>
     <excludeButtons>PrintableView</excludeButtons>
-    <excludeButtons>RequestUseSfdc</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <excludeButtons>StartOutboundConversation</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
@@ -101,16 +100,24 @@
         </relatedContentItems>
     </relatedContent>
     <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
         <fields>NAME</fields>
         <relatedList>Wallet__c.User__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
         <fields>NAME</fields>
         <relatedList>Category__c.User__c</relatedList>
     </relatedLists>
     <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
         <fields>NAME</fields>
         <relatedList>Transaction__c.User__c</relatedList>
+    </relatedLists>
+    <relatedLists>
+        <excludeButtons>MassChangeOwner</excludeButtons>
+        <fields>NAME</fields>
+        <relatedList>RecurringTransaction__c.User__c</relatedList>
     </relatedLists>
     <relatedObjects>AccountId</relatedObjects>
     <showEmailCheckbox>false</showEmailCheckbox>
