@@ -27,6 +27,10 @@
                 <behavior>Required</behavior>
                 <field>CashSchedulerId__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>LastLoginDate__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

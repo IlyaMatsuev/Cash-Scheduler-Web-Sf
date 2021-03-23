@@ -18,6 +18,8 @@
     <tabs>Category__c</tabs>
     <tabs>Transaction__c</tabs>
     <tabs>RecurringTransaction__c</tabs>
+    <tabs>standard-Report</tabs>
+    <tabs>standard-Dashboard</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Cash_Scheduler_UtilityBar</utilityBar>
 </CustomApplication>

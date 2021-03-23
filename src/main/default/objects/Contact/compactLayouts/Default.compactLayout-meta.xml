@@ -4,5 +4,6 @@
     <fields>Name</fields>
     <fields>Email</fields>
     <fields>CashSchedulerId__c</fields>
+    <fields>LastLoginDate__c</fields>
     <label>Default</label>
 </CompactLayout>

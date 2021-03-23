@@ -24,6 +24,7 @@ sfdx force:user:permset:assign -n TriggerFrameworkUser -u "$org_alias"
 
 echo
 echo "Loading data..."
+sfdx force:apex:execute -u "$org_alias" -f ./scripts/apex/remove-base-accounts.apex
 sfdx force:data:tree:import -p ./data/Account-plan.json -u "$org_alias"
 
 echo
