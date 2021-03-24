@@ -3,6 +3,8 @@
     <fullName>AllContacts</fullName>
     <columns>FULL_NAME</columns>
     <columns>CONTACT.EMAIL</columns>
+    <columns>CONTACT.CREATED_DATE</columns>
+    <columns>LastLoginDate__c</columns>
     <filterScope>Everything</filterScope>
     <label>All Contacts</label>
 </ListView>
