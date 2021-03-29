@@ -32,6 +32,10 @@ sfdx force:source:deploy -u "$scratch_alias" -p ./src/main/default/labels
 sfdx force:source:push -u "$scratch_alias"
 
 echo
+echo "Creating test users"
+sfdx force:user:create -f ./config/support-agent-user-def.json username="$scratch_alias".bob.marley@cash.scheduler.scratch -u "$scratch_alias" -v "$dev_hub_alias"
+
+echo
 echo "Assigning permissions..."
 sfdx force:user:permset:assign -n CashSchedulerAdmin -u "$scratch_alias"
 sfdx force:user:permset:assign -n TriggerFrameworkUser -u "$scratch_alias"
@@ -42,6 +46,7 @@ sfdx force:user:password:generate -u "$scratch_alias" -v "$dev_hub_alias"
 
 echo
 echo "Loading data..."
+sfdx force:apex:execute -u "$scratch_alias" -f ./scripts/apex/assign-queue-members.apex
 sfdx force:data:tree:import -p ./data/Account-plan.json -u "$scratch_alias"
 
 echo

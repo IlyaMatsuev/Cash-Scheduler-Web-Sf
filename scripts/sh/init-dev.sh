@@ -15,7 +15,12 @@ echo
 echo "Deploying to $org_alias..."
 sfdx force:source:deploy -u "$org_alias" -p ./src/main/trigger-framework/labels
 sfdx force:source:deploy -u "$org_alias" -p ./src/main/default/labels
+# Before running the command below we need to enable omni channel in the dev org
 sfdx force:source:deploy -u "$org_alias" -p ./src
+
+echo
+echo "Creating test users"
+sfdx force:apex:execute -u "$org_alias" -f ./scripts/apex/create-dev-org-support.apex
 
 echo
 echo "Assigning permissions..."
@@ -25,6 +30,7 @@ sfdx force:user:permset:assign -n TriggerFrameworkUser -u "$org_alias"
 echo
 echo "Loading data..."
 sfdx force:apex:execute -u "$org_alias" -f ./scripts/apex/remove-base-accounts.apex
+sfdx force:apex:execute -u "$org_alias" -f ./scripts/apex/assign-queue-members.apex
 sfdx force:data:tree:import -p ./data/Account-plan.json -u "$org_alias"
 
 echo

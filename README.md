@@ -38,9 +38,13 @@ cd ./cash-scheduler-web-sf
 
 4. Follow the instructions in the script
 
+5. For the profile "Support Agent" and permission set "Cash Scheduler Admin" give access for the presence statuses to be able switch statuses in the service cloud omni-channel
+
 ### Dev Org Installation
 
-All steps are the same as for scratch org installation but instead of calling:
+Before installing the repo on the dev org, please activate omni-channel in setup first.
+
+All other steps are the same as for scratch org installation but instead of calling:
 
 ```bash
 ./scripts/sh/init-scratch.sh
