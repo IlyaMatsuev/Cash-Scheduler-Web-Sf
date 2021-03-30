@@ -10,6 +10,56 @@
     <excludeButtons>PrintableView</excludeButtons>
     <excludeButtons>Share</excludeButtons>
     <excludeButtons>Submit</excludeButtons>
+    <feedLayout>
+        <autocollapsePublisher>true</autocollapsePublisher>
+        <compactFeed>true</compactFeed>
+        <feedFilterPosition>LeftFixed</feedFilterPosition>
+        <feedFilters>
+            <feedFilterType>AllUpdates</feedFilterType>
+        </feedFilters>
+        <feedFilters>
+            <feedFilterType>FeedItemType</feedFilterType>
+            <feedItemType>EmailMessageEvent</feedItemType>
+        </feedFilters>
+        <feedFilters>
+            <feedFilterType>FeedItemType</feedFilterType>
+            <feedItemType>CallLogPost</feedItemType>
+        </feedFilters>
+        <feedFilters>
+            <feedFilterType>FeedItemType</feedFilterType>
+            <feedItemType>TextPost</feedItemType>
+        </feedFilters>
+        <feedFilters>
+            <feedFilterType>FeedItemType</feedFilterType>
+            <feedItemType>ChangeStatusPost</feedItemType>
+        </feedFilters>
+        <feedFilters>
+            <feedFilterType>FeedItemType</feedFilterType>
+            <feedItemType>ActivityEvent</feedItemType>
+        </feedFilters>
+        <fullWidthFeed>true</fullWidthFeed>
+        <hideSidebar>true</hideSidebar>
+        <highlightExternalFeedItems>false</highlightExternalFeedItems>
+        <rightComponents>
+            <componentType>HelpAndToolLinks</componentType>
+        </rightComponents>
+        <rightComponents>
+            <componentType>Following</componentType>
+        </rightComponents>
+        <rightComponents>
+            <componentType>Followers</componentType>
+        </rightComponents>
+        <rightComponents>
+            <componentType>Topics</componentType>
+        </rightComponents>
+        <rightComponents>
+            <componentType>CustomLinks</componentType>
+        </rightComponents>
+        <rightComponents>
+            <componentType>CustomButtons</componentType>
+        </rightComponents>
+        <useInlineFiltersInConsole>false</useInlineFiltersInConsole>
+    </feedLayout>
     <layoutSections>
         <customLabel>false</customLabel>
         <detailHeading>false</detailHeading>
@@ -152,14 +202,24 @@
             <sortOrder>2</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
-            <actionName>Clone</actionName>
-            <actionType>StandardButton</actionType>
+            <actionName>Case.SendEmail</actionName>
+            <actionType>QuickAction</actionType>
             <sortOrder>3</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>FeedItem.RypplePost</actionName>
+            <actionType>QuickAction</actionType>
+            <sortOrder>4</sortOrder>
         </platformActionListItems>
         <platformActionListItems>
             <actionName>StartOutboundConversation</actionName>
             <actionType>StandardButton</actionType>
-            <sortOrder>4</sortOrder>
+            <sortOrder>5</sortOrder>
+        </platformActionListItems>
+        <platformActionListItems>
+            <actionName>Clone</actionName>
+            <actionType>StandardButton</actionType>
+            <sortOrder>6</sortOrder>
         </platformActionListItems>
     </platformActionList>
     <quickActionList/>

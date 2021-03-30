@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CaseSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAssignNotificationTemplate>CashScheduler/SupportCaseAssigned</caseAssignNotificationTemplate>
+    <caseAutoProcUser>false</caseAutoProcUser>
+    <caseCreateNotificationTemplate>CashScheduler/SupportCaseCreated</caseCreateNotificationTemplate>
     <caseFeedItemSettings>
         <characterLimit>400</characterLimit>
         <displayFormat>Default</displayFormat>
@@ -12,7 +15,15 @@
     <defaultCaseOwner>SupportAgents</defaultCaseOwner>
     <defaultCaseOwnerType>Queue</defaultCaseOwnerType>
     <emailToCase>
-        <enableEmailToCase>false</enableEmailToCase>
+        <enableE2CAttachmentAsFile>true</enableE2CAttachmentAsFile>
+        <enableE2CSourceTracking>true</enableE2CSourceTracking>
+        <enableEmailToCase>true</enableEmailToCase>
+        <enableHtmlEmail>true</enableHtmlEmail>
+        <enableOnDemandEmailToCase>false</enableOnDemandEmailToCase>
+        <enableThreadIDInBody>true</enableThreadIDInBody>
+        <enableThreadIDInSubject>true</enableThreadIDInSubject>
+        <notifyOwnerOnNewCaseEmail>false</notifyOwnerOnNewCaseEmail>
+        <preQuoteSignature>false</preQuoteSignature>
     </emailToCase>
     <enableCaseFeed>false</enableCaseFeed>
     <enableCollapseEmailThread>true</enableCollapseEmailThread>
@@ -37,7 +48,7 @@
     <visibleInCssCheckbox>false</visibleInCssCheckbox>
     <webToCase>
         <caseOrigin>Web</caseOrigin>
-        <defaultResponseTemplate>unfiled$public/SupportCaseCreated</defaultResponseTemplate>
+        <defaultResponseTemplate>CashScheduler/SupportCaseCreated</defaultResponseTemplate>
         <enableWebToCase>true</enableWebToCase>
     </webToCase>
 </CaseSettings>
