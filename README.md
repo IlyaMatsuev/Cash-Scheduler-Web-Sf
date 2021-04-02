@@ -40,6 +40,8 @@ cd ./cash-scheduler-web-sf
 
 5. For the profile "Support Agent" and permission set "Cash Scheduler Admin" give access for the presence statuses to be able switch statuses in the service cloud omni-channel
 
+6. Fill the org defaults for Cash Scheduler Server Settings (Custom Settings)
+
 ### Dev Org Installation
 
 Before installing the repo on the dev org, please activate omni-channel in setup first.

@@ -14,8 +14,12 @@
       "enableOmniChannel": true
     },
     "caseSettings": {
-      "webToCase": true,
-      "emailToCase": true
+      "webToCase": {
+        "enableWebToCase": true
+      },
+      "emailToCase": {
+        "enableEmailToCase": true
+      }
     }
   }
 }

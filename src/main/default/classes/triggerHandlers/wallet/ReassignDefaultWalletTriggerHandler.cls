@@ -5,7 +5,7 @@
 public with sharing class ReassignDefaultWalletTriggerHandler implements ITriggerHandler {
 
     public void handle(TriggerContext context, ITriggerService service) {
-        List<Wallet__c> wallets = (List<Wallet__c>) context.newList;
+        List<Wallet__c> wallets = context.newList;
         Map<Id, Contact> contacts = getContactsByWallets(wallets);
         List<Wallet__c> walletsToResetDefault = new List<Wallet__c>();
 

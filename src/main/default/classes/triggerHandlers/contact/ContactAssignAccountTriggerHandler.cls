@@ -5,9 +5,8 @@
 public with sharing class ContactAssignAccountTriggerHandler implements ITriggerHandler {
 
     public void handle(TriggerContext context, ITriggerService service) {
-        List<Contact> contacts = (List<Contact>) context.newList;
         Account cashSchedulerAccount = getCashSchedulerAccount();
-        for (Contact contact : contacts) {
+        for (Contact contact : (List<Contact>) context.newList) {
             if (String.isBlank(contact.AccountId)) {
                 contact.AccountId = cashSchedulerAccount.Id;
             }

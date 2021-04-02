@@ -26,9 +26,14 @@ echo "Creating scratch..."
 sfdx force:org:create -f ./config/scratch-def.json -a "$scratch_alias" -v "$dev_hub_alias" -d "$days"
 
 echo
+echo "Installing packages..."
+sfdx force:package:install --wait 10 --publishwait 10 --package 04t1C000000tfGqQAI --noprompt -u "$scratch_alias"
+
+echo
 echo "Deploying to $scratch_alias..."
-sfdx force:source:deploy -u "$scratch_alias" -p ./src/main/trigger-framework/labels
-sfdx force:source:deploy -u "$scratch_alias" -p ./src/main/default/labels
+sfdx config:set restDeploy=false
+sfdx force:source:deploy -p ./src/main/trigger-framework/labels -u "$scratch_alias"
+sfdx force:source:deploy -p ./src/main/default/labels -u "$scratch_alias"
 sfdx force:source:push -u "$scratch_alias"
 
 echo
@@ -39,14 +44,15 @@ echo
 echo "Assigning permissions..."
 sfdx force:user:permset:assign -n CashSchedulerAdmin -u "$scratch_alias"
 sfdx force:user:permset:assign -n TriggerFrameworkUser -u "$scratch_alias"
+sfdx force:user:permset:assign -n RestClientUser -u "$scratch_alias"
 
 echo
 echo "Generating password..."
-sfdx force:user:password:generate -u "$scratch_alias" -v "$dev_hub_alias"
+sfdx force:user:password:generate -v "$dev_hub_alias" -u "$scratch_alias"
 
 echo
 echo "Loading data..."
-sfdx force:apex:execute -u "$scratch_alias" -f ./scripts/apex/assign-queue-members.apex
+sfdx force:apex:execute -f ./scripts/apex/assign-queue-members.apex -u "$scratch_alias"
 sfdx force:data:tree:import -p ./data/Account-plan.json -u "$scratch_alias"
 
 echo

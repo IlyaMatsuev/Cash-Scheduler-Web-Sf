@@ -12,20 +12,25 @@ echo "Please login to org."
 sfdx force:auth:web:login -a "$org_alias"
 
 echo
+echo "Installing packages..."
+sfdx force:package:install --wait 10 --publishwait 10 --package 04t1C000000tfGqQAI --noprompt -u "$org_alias"
+
+echo
 echo "Deploying to $org_alias..."
-sfdx force:source:deploy -u "$org_alias" -p ./src/main/trigger-framework/labels
-sfdx force:source:deploy -u "$org_alias" -p ./src/main/default/labels
+sfdx force:source:deploy -p ./src/main/trigger-framework/labels -u "$org_alias"
+sfdx force:source:deploy -p ./src/main/default/labels -u "$org_alias"
 # Before running the command below we need to enable omni channel in the dev org
-sfdx force:source:deploy -u "$org_alias" -p ./src
+sfdx force:source:deploy -p ./src -u "$org_alias"
 
 echo
 echo "Creating test users"
-sfdx force:apex:execute -u "$org_alias" -f ./scripts/apex/create-dev-org-support.apex
+sfdx force:apex:execute -f ./scripts/apex/create-dev-org-support.apex -u "$org_alias"
 
 echo
 echo "Assigning permissions..."
 sfdx force:user:permset:assign -n CashSchedulerAdmin -u "$org_alias"
 sfdx force:user:permset:assign -n TriggerFrameworkUser -u "$org_alias"
+sfdx force:user:permset:assign -n RestClientUser -u "$org_alias"
 
 echo
 echo "Loading data..."
