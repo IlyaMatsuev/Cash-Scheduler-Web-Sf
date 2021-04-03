@@ -41,6 +41,20 @@ private class CashSchedulerWebServiceTest {
                 )
         };
         insert contacts;
+
+        List<Case> cases = new List<Case> {
+                dataFactory.generateCaseWithoutContact(
+                        'Joe Biden ',
+                        'joe.biden@gmail.com',
+                        'Test1'
+                ),
+                dataFactory.generateCaseWithoutContact(
+                        'John Watson',
+                        'john.watson@gmail.com',
+                        'Test2'
+                )
+        };
+        insert cases;
     }
 
     @IsTest
@@ -66,12 +80,15 @@ private class CashSchedulerWebServiceTest {
 
 
         List<Contact> contacts = getContacts();
+        List<Case> cases = getCases();
         Map<String, Object> responseBody = (Map<String, Object>) JSON.deserializeUntyped(
                 response.responseBody.toString()
         );
 
         System.assertEquals(1, contacts.size());
+        System.assertEquals(1, cases.size());
         System.assertEquals(CONTACT_CASH_SCHEDULER_ID_3, contacts.get(0).CashSchedulerId__c);
+        System.assertEquals(1, contacts.get(0).Cases.size());
         System.assert(response.headers.containsKey(HttpConstants.CONTENT_TYPE_HEADER));
         System.assertEquals(HttpConstants.CONTENT_TYPE_JSON, response.headers.get(HttpConstants.CONTENT_TYPE_HEADER));
         System.assert(responseBody.containsKey('success'));
@@ -84,8 +101,15 @@ private class CashSchedulerWebServiceTest {
 
     private static List<Contact> getContacts() {
         return [
-                SELECT CashSchedulerId__c
+                SELECT CashSchedulerId__c, (SELECT Id FROM Cases)
                 FROM Contact
+        ];
+    }
+
+    private static List<Case> getCases() {
+        return [
+                SELECT Id
+                FROM Case
         ];
     }
 }

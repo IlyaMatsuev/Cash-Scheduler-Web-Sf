@@ -27,6 +27,9 @@ global with sharing class CashSchedulerWebService {
                 externalIds.add(Integer.valueOf(externalIdString.trim()));
             }
             String query = 'SELECT Id FROM ' + sObjectTypeName + ' WHERE CashSchedulerId__c IN :externalIds';
+            if (sObjectTypeName == Contact.class.getName()) {
+                Database.delete([SELECT Id FROM Case WHERE Contact.CashSchedulerId__c IN :externalIds]);
+            }
             Database.delete(Database.query(query));
         } catch (QueryException error) {
             response.statusCode = 400;
