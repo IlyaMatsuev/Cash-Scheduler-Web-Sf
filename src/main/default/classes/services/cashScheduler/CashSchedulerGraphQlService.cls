@@ -35,5 +35,6 @@ public with sharing class CashSchedulerGraphQlService implements ICashSchedulerG
                 .send();
 
         System.debug('Response success: ' + response.success);
+        System.debug('Response: ' + response.jsonBody);
     }
 }

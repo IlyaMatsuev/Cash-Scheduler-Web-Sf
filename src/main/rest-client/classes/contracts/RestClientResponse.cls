@@ -10,6 +10,12 @@ public with sharing class RestClientResponse {
             return response.getStatusCode() == HttpConstants.SUCCESS_STATUS;
         }
     }
+    
+    public String jsonBody {
+        get {
+            return JSON.serializePretty(response.getBody());
+        }
+    }
 
     public RestClientResponse(HttpResponse response) {
         this.response = response;
