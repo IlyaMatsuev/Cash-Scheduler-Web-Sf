@@ -28,6 +28,8 @@ global with sharing class CashSchedulerWebService {
             }
             String query = 'SELECT Id FROM ' + sObjectTypeName + ' WHERE CashSchedulerId__c IN :externalIds';
             if (sObjectTypeName == Contact.class.getName()) {
+                Database.delete([SELECT Id FROM Wallet__c WHERE User__r.CashSchedulerId__c IN :externalIds]);
+                Database.delete([SELECT Id FROM Category__c WHERE User__r.CashSchedulerId__c IN :externalIds]);
                 Database.delete([SELECT Id FROM Case WHERE Contact.CashSchedulerId__c IN :externalIds]);
             }
             Database.delete(Database.query(query));
