@@ -1,18 +1,19 @@
 # Cash Scheduler Web Sf
 
 This project contains sources of the Salesforce part of the Cash Scheduler Web application.
-Its aim is to handle some clients' information, build reports and dashboards, notify clients via emails and execute some jobs. 
+Its aim is to handle some clients' information, build reports and dashboards, notify clients via emails and execute some jobs.
 
 -   [Full Project](#full-project)
 -   [Installation](#installation)
-    - [Scratch](#scratch-org-installation)
-    - [Dev](#dev-org-installation)
+    -   [Scratch](#scratch-org-installation)
+    -   [Dev](#dev-org-installation)
 
 ## Full Project
 
 The full project is located here:
-- [Cash Scheduler Web Front-End](https://github.com/IlyaMatsuev/Cash-Scheduler-Web-Client)
-- [Cash Scheduler Web Back-End](https://github.com/IlyaMatsuev/Cash-Scheduler-Web-Server)
+
+-   [Cash Scheduler Web Front-End](https://github.com/IlyaMatsuev/Cash-Scheduler-Web-Client)
+-   [Cash Scheduler Web Back-End](https://github.com/IlyaMatsuev/Cash-Scheduler-Web-Server)
 
 ## Installation
 
@@ -40,7 +41,9 @@ cd ./cash-scheduler-web-sf
 
 5. For the profile "Support Agent" and permission set "Cash Scheduler Admin" give access for the presence statuses to be able switch statuses in the service cloud omni-channel
 
-6. Fill the org defaults for Cash Scheduler Server Settings (Custom Settings)
+6. Set default routing configuration for the Support Service queue
+
+7. Fill the org defaults for Cash Scheduler Server Settings (Custom Settings)
 
 ### Dev Org Installation
 
@@ -51,6 +54,7 @@ All other steps are the same as for scratch org installation but instead of call
 ```bash
 ./scripts/sh/init-scratch.sh
 ```
+
 You should use:
 
 ```bash
