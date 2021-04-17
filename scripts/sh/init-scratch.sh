@@ -37,7 +37,7 @@ sfdx force:source:deploy -p ./src/main/default/labels -u "$scratch_alias"
 sfdx force:source:push -u "$scratch_alias"
 
 echo
-echo "Creating test users"
+echo "Creating test users..."
 sfdx force:user:create -f ./config/support-agent-user-def.json username="$scratch_alias".bob.marley@cash.scheduler.scratch -u "$scratch_alias" -v "$dev_hub_alias"
 
 echo

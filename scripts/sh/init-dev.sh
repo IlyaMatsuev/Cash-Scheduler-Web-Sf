@@ -23,7 +23,7 @@ sfdx force:source:deploy -p ./src/main/default/labels -u "$org_alias"
 sfdx force:source:deploy -p ./src -u "$org_alias"
 
 echo
-echo "Creating test users"
+echo "Creating test users..."
 sfdx force:apex:execute -f ./scripts/apex/create-dev-org-support.apex -u "$org_alias"
 
 echo
